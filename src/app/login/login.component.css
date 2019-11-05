@@ -1,0 +1,30 @@
+.main-div{
+    position:fixed;
+    top: 30%;
+    left: 50%;
+    width:30em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    margin-bottom:5px;
+    padding:10px;
+    border: 1px solid #ccc;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.mail {
+  width: 40%;
+  border-radius: 25%;
+}
+
+.content {
+    align-content: center;
+  padding: 16px;
+}
+
+.content input{
+    width:100%;
+    font-size: 18px;
+}

@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { PostMessageComponent } from './post-message/post-message.component';
+import { ViewMessageComponent } from './view-message/view-message.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path:'', component:AppComponent},
+  { path:'post', component:PostMessageComponent},
+  {path:'view', component:ViewMessageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

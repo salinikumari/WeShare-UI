@@ -1,19 +1,18 @@
-<form id = "frmLogin" class ="divForm">
-  <h2>WeShare - Login</h2>
+<div class="main-div">
+<form>
+  <h2 style="text-align: center;">WeShare - Login</h2>
     <div class="imgcontainer">
-      <img src="images/msg.png" alt="WeShare" class="mail">
+      <img src="../../assets/images/msg.png" alt="WeShare" class="mail">
     </div>
-    <font color="red"><span id ="lblErr" ></span></font>
-  
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="userName"  id ="txtUserName" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" id = "txtPassword" required>
-          
-      <button type = "submit" id = "btnLogin">Login</button>
-      <button type="reset" class="cancelbtn" id = "btnCancel">Cancel</button>
+    <div class="content">
+      <input type="text" placeholder="Username" name="userName" required>
+      <br>
+      <br>
+      <input type="password" placeholder="Password" name="password" required>
+      <br>
+      <br>
+      <button type = "submit" class="btn btn-success">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="reset" class="btn btn-danger" >Cancel</button>
     </div>
   </form>
-  
+</div>
