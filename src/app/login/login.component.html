@@ -4,13 +4,17 @@
       <img src="../../assets/images/msg.png" alt="WeShare" class="mail">
     </div>
     <div class="content">
-      <input type="text" placeholder="Username" name="userName" >
+      <form (ngSubmit)="onLogin(frmLogin)" #frmLogin="ngForm">
+      <input type="text" placeholder="Username" name="userName" ngModel required email #userName="ngModel">
+      <span style="color:red" *ngIf="!userName.valid && userName.touched">Please enter valid email Id.</span>
       <br>
       <br>
-      <input type="password" placeholder="Password" name="password">
+      <input type="password" placeholder="Password" name="password" ngModel required #pwd="ngModel">
+      <span style="color:red" *ngIf="!pwd.valid && pwd.touched">Please enter password.</span>
       <br>
       <br>
-      <button class="btn btn-success" (click)="onLogin()">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-success" type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
       <button type="reset" class="btn btn-danger" >Cancel</button>
+    </form>
     </div>
 </div>

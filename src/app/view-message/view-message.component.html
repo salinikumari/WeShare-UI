@@ -1,25 +1,19 @@
-<div *ngIf="myMsg; else others">
-  <h3 style="color:darkorange">My Messages</h3>
+<div>
+  <h3 *ngIf="myMsg" style="color:darkorange">My Messages</h3>
+  <h3 *ngIf="!myMsg" style="color:darkorange">Others Messages</h3>
   <hr>
-  <table style="table-layout:auto;width:100%;word-wrap:break-word;border:1px">
+  <table style="table-layout:auto;width:100%;word-wrap:break-word;border-collapse: collapse;" border="1">
       <tr>
           <th>No.</th>
+          <th *ngIf="!myMsg">User</th>
           <th>Message</th>
           <th>Date</th>
       </tr>
+      <tr *ngFor="let msg of msgList;let i = index">
+        <td>{{i + 1}}</td>
+        <td  *ngIf="!myMsg">{{msg.userName}}</td>
+        <td>{{msg.message}}</td>
+        <td>{{msg.date | date : 'medium'}}</td>
+      </tr>
   </table>
 </div>
-<ng-template #others>
-<div>
-  <h3 style="color:darkorange">Others Messages</h3>
-  <hr>
-  <table style="table-layout:auto;width:100%;word-wrap:break-word;border:1px">
-    <tr>
-      <th>No.</th>
-      <th>User</th>
-      <th>Message</th>
-      <th>Date</th>
-  </tr>
-</table>
-</div>
-</ng-template>

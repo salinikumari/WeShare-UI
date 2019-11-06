@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogin(){
+  onLogin(form : NgForm){
+    if (!form.valid)
+      return;
+    localStorage.setItem('userName', form.value.userName);
     this.loginAuthenticated.emit(true);
   }
 }

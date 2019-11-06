@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isLoggedIn = false;
 
+  constructor(){
+    localStorage.clear();
+    console.log("cleared");
+  }
+
   onLoginAuthenticated(loginSuccess:boolean){
     this.isLoggedIn = loginSuccess;
   }

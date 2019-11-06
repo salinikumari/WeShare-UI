@@ -1,5 +1,20 @@
 <div class="row-cols-xs-100">
   <h3 style="color:darkorange">Post</h3>
-  <textarea rows = "5"  cols ="50" id ="txtMsg" placeholder="Type message here."></textarea><br/>
-<button class ="btn btn-primary">Post</button>
+  <form (ngSubmit)="onPost(frmPost)" #frmPost="ngForm" >
+    <input type="checkbox" #changeUser name="changeUser" ngModel>Change User
+    <div *ngIf="changeUser.checked" >
+    <input type="text" placeholder="Username" ngModel name="userName">
+    <br>
+  </div>
+  <br>
+  <textarea rows = "5"  cols ="50" name ="message" placeholder="Type message here." required ngModel></textarea><br/>
+<button class ="btn btn-primary" type="submit">Post</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<div *ngIf="messages.length > 0">
+  <h4>Messages:</h4>
+  <ul>
+    <li *ngFor="let msg of messages">{{msg}}</li>
+  </ul>
+</div>
+</form>
 </div>
