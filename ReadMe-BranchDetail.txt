@@ -38,6 +38,7 @@
 2. Header Component
    -- Display the username from local storage
 3. Message Service
+   -- Stores the Messages in an array
    -- Add Message
    -- Get Message (Provided Filter for Username)
 3. Post Message 
