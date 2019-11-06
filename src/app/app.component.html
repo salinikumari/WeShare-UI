@@ -1,21 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <div>
-      <div *ngIf="isLoggedIn">
-          <app-sidebar></app-sidebar>
-       </div>
-      <div class="main-container">
-        <div  *ngIf="isLoggedIn">
-          <app-header></app-header>
+    <div *ngIf="isLoggedIn">
+        <app-sidebar></app-sidebar>
+     </div>
+     <div class="main-container">
+        <div *ngIf="isLoggedIn">
+          <app-header (logoutEvent) = "onLogout()"></app-header>
         </div>
         <!-- Main content -->
-        <div *ngIf="!isLoggedIn">
-          <app-login></app-login>
-        </div><!-- End Main content -->
-        <router-outlet></router-outlet>
-        <footer *ngIf="isLoggedIn" class="footer">
-              <strong>Copyright &copy; 2019.</strong> KS Sample. All rights reserved.
-          </footer> 
+      <div *ngIf="!isLoggedIn">
+        <app-login (loginAuthenticated) = "onLoginAuthenticated($event)"></app-login>
       </div>
-  </div>
+      <div class="" *ngIf="isLoggedIn">
+      <router-outlet></router-outlet>
+    </div>
+      <footer class="footer" *ngIf="isLoggedIn">
+          <strong>Copyright &copy; 2019.</strong> KS Sample. All rights reserved.
+      </footer> 
+    </div>
+
 </div>
+  
