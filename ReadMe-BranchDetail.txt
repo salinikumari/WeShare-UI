@@ -2,7 +2,7 @@
 =================
 - Basic Angular Sample setup
 
-2. KS-1
+2. KS-1 - Router
 =======
 1 Added the following components
   -- Login Component
@@ -30,7 +30,7 @@
  -- On click "Logout" button, emits event to change the isLoggedIn status
 
 
-3. KS-2
+3. KS-2 - Service
 =======
 1. Login Component
    -- Validations to fill the values
@@ -49,3 +49,28 @@
 4. View Message
    -- Display the Messages based on myMsg
    -- Uses MessageService
+
+3. KS-3 - Reactive Forms
+========
+1. User Add Component
+   Details
+   - Personal
+     First Name
+     Last Name
+     User Name(email)
+   - Contact Details (Multiple)
+     Phone
+     Address1
+     Address2
+     City
+     State
+     Country
+     Zip Code
+   - Hobbies (Multiple)
+     - Can select from checkboxes
+     - "Other" selection should bring up Textbox to accept the values
+   
+ Use Model
+ Use FormGroup and FormArray
+
+2. Users List Component

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PostMessageComponent } from './post-message/post-message.component';
 import { ViewMessageComponent } from './view-message/view-message.component';
 import { MessageService } from './services/message.service';
+import { UsersComponent } from './users/users.component';
+import { UserAddComponent } from './users/user-add/user-add.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { MessageService } from './services/message.service';
     HeaderComponent,
     SidebarComponent,
     PostMessageComponent,
-    ViewMessageComponent
+    ViewMessageComponent,
+    UsersComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
