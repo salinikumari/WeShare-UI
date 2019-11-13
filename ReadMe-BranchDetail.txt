@@ -88,4 +88,7 @@
 
 3. Sidebar Component
    a. Add link for User List and User Add
-   
+
+4. Issue Fix:
+On hitting F5: the ui logged out: Fixed
+(App component checks localStorage and retain the isLoggedIn)
