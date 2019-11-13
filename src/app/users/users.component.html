@@ -1,3 +1,52 @@
-<p>
-  users works!
-</p>
+<div>
+  <h3 style="color:darkorange">Users</h3>
+  <hr>
+  <table border="1">
+      <tr>
+          <th>No.</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>User Name</th>
+          <th>Contacts</th>
+          <th>Hobbies</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+      <tr *ngFor="let user of userList;let i = index">
+        <td>{{i + 1}}</td>
+        <td >{{user.firstName}}</td>
+        <td >{{user.lastName}}</td>
+        <td >{{user.userName}}</td>
+        <td>
+          <div *ngFor="let addr of user.contacts; let j = index">
+            <p class="heading">Contact {{ j + 1}}:</p>
+            Phone: {{addr.phone}}
+            <br>
+            Address: {{addr.address}}
+            <br>
+            City: {{addr.city}}
+            <br>
+            State: {{addr.state}}
+            <br>
+            Country: {{addr.country}}
+            <br>
+            Zipcode: {{addr.zipcode}}
+            <br>
+            <br>
+          </div>
+        </td>
+        <td>
+          <p *ngIf="user.hobbies.reading">Reading</p>
+          <p *ngIf="user.hobbies.singing">Singing</p>
+          <p *ngIf="user.hobbies.dancing">Dancing</p>
+          <p *ngIf="user.hobbies.others">{{user.hobbies.otherValue}}</p>
+        </td>
+        <td>
+          <img src ="../../assets/images/edit_user.png" [routerLink]="'/users/edit/'+i" />
+        </td>
+        <td>
+            <img src ="../../assets/images/delete.png" (click)="onDeleteUser(i)"/>
+          </td>
+        </tr>
+  </table>
+</div>

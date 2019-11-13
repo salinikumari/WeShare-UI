@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isLoggedIn = true;
+  isLoggedIn = false;
 
-  constructor(){
+  constructor(private router: Router){
     localStorage.clear();
-    console.log("cleared");
   }
 
   onLoginAuthenticated(loginSuccess:boolean){
@@ -19,5 +19,6 @@ export class AppComponent {
 
   onLogout(){
     this.isLoggedIn = false;
+    localStorage.clear();
   }
 }

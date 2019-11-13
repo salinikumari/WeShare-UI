@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
     <div *ngIf="isLoggedIn">
         <app-sidebar></app-sidebar>
@@ -7,17 +6,15 @@
         <div *ngIf="isLoggedIn">
           <app-header (logoutEvent) = "onLogout()"></app-header>
         </div>
-        <!-- Main content -->
       <div *ngIf="!isLoggedIn">
         <app-login (loginAuthenticated) = "onLoginAuthenticated($event)"></app-login>
       </div>
-      <div class="" *ngIf="isLoggedIn">
+      <div class="main-content" *ngIf="isLoggedIn" >
       <router-outlet></router-outlet>
     </div>
-      <footer class="footer" *ngIf="isLoggedIn">
-          <strong>Copyright &copy; 2019.</strong> KS Sample. All rights reserved.
-      </footer> 
     </div>
-
+    <div class="footer" *ngIf="isLoggedIn">
+      <strong>Copyright &copy; 2019.</strong> KS Sample. All rights reserved.
+  </div> 
 </div>
   

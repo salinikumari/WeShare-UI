@@ -53,24 +53,39 @@
 3. KS-3 - Reactive Forms
 ========
 1. User Add Component
-   Details
+   a. Details
    - Personal
      First Name
      Last Name
      User Name(email)
-   - Contact Details (Multiple)
+   - Contact Details (Multiple - Can be added using "Add More" and can be removed using "delete" option)
      Phone
-     Address1
-     Address2
+     Address
      City
      State
      Country
      Zip Code
-   - Hobbies (Multiple)
+   - Hobbies (Multiple selection)
      - Can select from checkboxes
      - "Other" selection should bring up Textbox to accept the values
    
- Use Model
- Use FormGroup and FormArray
+  b. Use Model, Service
+  c. Use FormGroup and FormArray 
+  d. Add Validators and display error
+  e. On Submit
+     - Add the user using UserService
+     - After successful add, display User List
+  f. Use same component for User Edit
+     - Display the existing Details
+     - On submit update the user
+     - After successful update, display User List
 
 2. Users List Component
+   a. Display all the users in a table
+   b. Provide "Edit" and "Delete" option for each user record
+   c. On "edit", load UserAddComponent
+   d. On "delete", delete the user (using UserService)
+
+3. Sidebar Component
+   a. Add link for User List and User Add
+   
