@@ -6,9 +6,11 @@ import { UserAddComponent } from './users/user-add/user-add.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path:'post', component:PostMessageComponent},
+  {path:'', component:HomeComponent},
+  {path:'post', component:PostMessageComponent},
   {path:'view', component:ViewMessageComponent},
   {path:'users', component:UsersComponent},
   {path:'users/add', component:UserAddComponent},

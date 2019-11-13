@@ -12,6 +12,7 @@ import { ViewMessageComponent } from './view-message/view-message.component';
 import { MessageService } from './services/message.service';
 import { UsersComponent } from './users/users.component';
 import { UserAddComponent } from './users/user-add/user-add.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserAddComponent } from './users/user-add/user-add.component';
     PostMessageComponent,
     ViewMessageComponent,
     UsersComponent,
-    UserAddComponent
+    UserAddComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

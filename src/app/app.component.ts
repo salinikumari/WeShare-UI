@@ -10,15 +10,18 @@ export class AppComponent {
   isLoggedIn = false;
 
   constructor(private router: Router){
-    localStorage.clear();
+    if (localStorage.getItem('userName'))
+      this.isLoggedIn = true;
   }
 
   onLoginAuthenticated(loginSuccess:boolean){
     this.isLoggedIn = loginSuccess;
+    this.router.navigate(['']);
   }
 
   onLogout(){
     this.isLoggedIn = false;
     localStorage.clear();
+    this.router.navigate(['']);
   }
 }
