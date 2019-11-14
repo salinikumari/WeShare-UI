@@ -35,7 +35,7 @@
              <div   class="formBorder"
                 *ngFor="let contactControl of getContactsControls(); let i = index">
                 <div [formGroupName]=i>
-                  <img *ngIf="i!==0" src="../../assets/images/delete.png" style="float:right" (click) = "onDeleteContact(i)"/>
+                  <img *ngIf="i!==0" src="../../assets/images/delete.png" style="float:right;cursor:pointer" (click) = "onDeleteContact(i)"/>
                   <table>
                     <tr>
                       <td>

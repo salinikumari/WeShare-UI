@@ -42,10 +42,10 @@
           <p *ngIf="user.hobbies.others">{{user.hobbies.otherValue}}</p>
         </td>
         <td>
-          <img src ="../../assets/images/edit_user.png" [routerLink]="'/users/edit/'+i" />
+          <img src ="../../assets/images/edit_user.png" [routerLink]="'/users/edit/'+i" style="cursor:pointer" />
         </td>
         <td>
-            <img src ="../../assets/images/delete.png" (click)="onDeleteUser(i)"/>
+            <img src ="../../assets/images/delete.png" (click)="onDeleteUser(i)"  style="cursor:pointer"/>
           </td>
         </tr>
   </table>
