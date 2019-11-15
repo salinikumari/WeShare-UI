@@ -1,7 +1,7 @@
 <div>
-  <h3 *ngIf="myMsg" style="color:darkorange">My Messages</h3>
-  <h3 *ngIf="!myMsg" style="color:darkorange">Others Messages</h3>
+  <h3 style="color:darkorange">{{ this.myMsg ? 'My Messages' : 'Others Messages' }}<span *ngIf="isLoading" style="color:green"> - Loading ...</span></h3>
   <hr>
+  <p class="errMsg" *ngIf="errorMsg">{{errorMsg}}</p>
   <table border="1">
       <tr>
           <th>No.</th>
@@ -13,7 +13,7 @@
         <td>{{i + 1}}</td>
         <td  *ngIf="!myMsg">{{msg.userName}}</td>
         <td>{{msg.message}}</td>
-        <td>{{msg.date | date : 'medium'}}</td>
+        <td>{{msg.createdDate | date : 'medium'}}</td>
       </tr>
   </table>
 </div>

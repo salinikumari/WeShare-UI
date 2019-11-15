@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MessageService } from '../services/message.service';
+import { HttpClient } from '@angular/common/http';
+import * as Util from  '../common/util';
 
 @Component({
   selector: 'app-post-message',
@@ -9,29 +10,41 @@ import { MessageService } from '../services/message.service';
 })
 export class PostMessageComponent implements OnInit {
 @ViewChild('changeUser') changeUser : any;
+messages :string[] = [];
+isLoading:boolean = false;
+statusMsg:string = null;
+errorMsg:string = null;
 
-  messages :string[] = [];
-
-  constructor(private msgSvc : MessageService) { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
   }
 
   onPost(form : NgForm){
-    var userName;
     if (!form.valid)
       return;
-    if(this.changeUser.nativeElement.checked)
-      userName = form.value.userName;
-    else
-      userName = localStorage.getItem('userName');
-   const msg = {
-      "userName": userName,
+   this.isLoading = true;
+   this.statusMsg ="Please wait...";
+   this.errorMsg=null;
+   const data = {
+      "userId": localStorage.getItem('userId'),
       "message":form.value.message,
-      "date": "" + new Date()
     };
-    this.msgSvc.addMessage(msg);
-    this.messages.push(form.value.message);
-    form.controls['message'].setValue('');
+    this.http.post(Util.POST_MSG_REQ, data).subscribe(response=>{
+      this.messages.push(form.value.message);
+      this.statusMsg = response['message'];
+      form.controls['message'].setValue('');
+      this.isLoading = false;
+    }, errorResponse=>{
+        this.errorMsg = "Server Error.";
+        this.statusMsg=null;
+        this.isLoading = false;
+      });
+  }
+
+  onClear(){
+    this.statusMsg=null;
+    this.errorMsg=null;
+    this.isLoading=false;
   }
 }

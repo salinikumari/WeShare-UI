@@ -13,8 +13,11 @@
       <span style="color:red" *ngIf="!pwd.valid && pwd.touched">Please enter password.</span>
       <br>
       <br>
-      <button class="btn btn-success" type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-success" type="submit" [disabled]="isLoading">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
       <button type="reset" class="btn btn-danger" >Cancel</button>
+      <label *ngIf="isLoading">"Please wait..."</label>
+      <br><br>
+      <p *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</p>
     </form>
     </div>
 </div>

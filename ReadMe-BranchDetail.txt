@@ -80,6 +80,7 @@
      - On submit update the user
      - After successful update, display User List
 
+
 2. Users List Component
    a. Display all the users in a table
    b. Provide "Edit" and "Delete" option for each user record
@@ -92,3 +93,12 @@
 4. Issue Fix:
 On hitting F5: the ui logged out: Fixed
 (App component checks localStorage and retain the isLoggedIn)
+
+4. KS-4 - API Calls
+========
+1. Connect to WeShare-API
+   - Login
+   - Post Message
+   - View My Messages
+   - View Others Messages
+   
